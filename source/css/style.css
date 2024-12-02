@@ -1,0 +1,399 @@
+:root {
+    --width: 720px;
+    --font-main: Verdana, sans-serif;
+    --font-secondary: Verdana, sans-serif;
+    --font-scale: 1em;
+    --background-color: #fff;
+    --heading-color: #222;
+    --text-color: #444;
+    --link-color: #3273dc;
+    --visited-color: #8b6fcb;
+    --code-background-color: #f2f2f2;
+    --code-color: #222;
+}
+
+body {
+    font-family: var(--font-secondary);
+    font-size: var(--font-scale);
+    margin: auto;
+    padding: 20px;
+    max-width: var(--width);
+    text-align: left;
+    background-color: var(--background-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: var(--text-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-main);
+    color: var(--heading-color);
+}
+
+a {
+    color: var(--link-color);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+nav a {
+    margin-right: 8px;
+}
+
+strong,
+b {
+    color: var(--heading-color);
+}
+
+button {
+    margin: 0;
+    cursor: pointer;
+}
+
+main {
+    line-height: 1.6;
+}
+
+table {
+    width: 100%;
+}
+
+hr {
+    border: 0;
+    border-top: 1px dashed;
+}
+
+img {
+    max-width: 100%;
+}
+
+code {
+    font-family: monospace;
+    padding: 2px;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    border-radius: 3px;
+}
+
+blockquote {
+    border-left: 1px solid #999;
+    color: var(--code-color);
+    padding-left: 20px;
+    font-style: italic;
+}
+
+footer {
+    padding: 25px 0;
+    text-align: center;
+}
+
+.title:hover {
+    text-decoration: none;
+}
+
+.title {
+    display: flex;
+    align-items: flex-end;
+}
+
+.title>h1 {
+    margin-right: 16px;
+}
+
+.inline {
+    width: auto !important;
+}
+
+.highlight,
+.code {
+    padding: 1px 15px;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    border-radius: 3px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    overflow-x: auto;
+}
+
+ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+}
+
+ul.blog-posts li {
+    display: flex;
+}
+
+ul.blog-posts li span {
+    flex: 0 0 130px;
+}
+
+ul.blog-posts li a:visited {
+    color: var(--visited-color);
+}
+
+.YT-FOW {
+    background-color: black;
+    color: black;
+    text-shadow: none;
+}
+
+.YT-FOW:hover,
+.YT-FOW:active {
+    transition: color .2s linear;
+    color: white
+}
+
+.YT-FOW a {
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+}
+
+.YT-FOW a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+.YT-FOW a:hover {
+    color: white;
+    text-decoration: underline;
+    transition: color .2s linear;
+}
+
+.photography {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.photography-item {
+    width: calc(33.33% - 16px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.photography-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+/* Main CSS */
+.grid-wrapper>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-wrapper>div>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.grid-wrapper {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: 200px;
+    grid-auto-flow: dense;
+}
+
+.grid-wrapper .wide {
+    grid-column: span 2;
+}
+
+.grid-wrapper .tall {
+    grid-row: span 2;
+}
+
+.grid-wrapper .big {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+/* Fullscreen overlay styles */
+#image-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000;
+}
+
+#image-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+#overlay-image {
+    max-width: 90%;
+    max-height: 90%;
+    transform: scale(0.9);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#image-overlay.visible #overlay-image {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Close button styles */
+#close-overlay {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: white;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+    background: none;
+    padding: 0;
+    /* Keep padding zero for the button itself */
+    margin: 0;
+    /* Prevent margin issues */
+    opacity: 0.8;
+}
+
+.nav-arrow:hover {
+    opacity: 1;
+}
+
+.left-arrow {
+    left: 20px;
+    /* Adjust for padding from the screen edge */
+}
+
+.right-arrow {
+    right: 20px;
+    /* Adjust for padding from the screen edge */
+}
+
+.dark-mode {
+    background: #282c34;
+    color: #CCCCCC;
+}
+
+.dark-mode a {
+    color: #61aeee;
+}
+
+.dark-mode pre code.hljs {
+    background: #282c34;
+}
+
+html.dark-mode, html.dark-mode body {
+    background-color: #282c34; /* Ensure both html and body have the dark background */
+    color: #CCCCCC; /* Text color for dark mode */
+}
+
+html.dark-mode a {
+    color: #61aeee; /* Links in dark mode */
+}
+
+html.dark-mode h1, html.dark-mode h2, html.dark-mode h3 {
+    color: #EEEEEE; /* Headings in dark mode */
+}
+
+html.dark-mode pre code.hljs {
+    background: #282c34;
+    color: #CCCCCC;
+}
+
+/* Container for the toggle button */
+#toggle-dark-mode {
+    position: fixed; /* Fixed position */
+    top: 20px; /* Adjust to where you want it */
+    right: 20px; /* Adjust to where you want it */
+    z-index: 100; /* Ensure it stays on top */
+    width: 30px; /* Adjust size of button */
+    height: 30px; /* Adjust size of button */
+    background-color: transparent; /* Transparent background */
+    border: none; /* No border */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    cursor: pointer;
+    box-shadow: none; /* Remove shadow */
+    transition: opacity 0.3s ease;
+    overflow: hidden; /* Prevent icons from overflowing */
+}
+
+/* General styles for both icons */
+#toggle-dark-mode span {
+    font-size: 24px; /* Adjust size of the icons */
+    position: absolute; /* Position the icons on top of each other */
+    transition: opacity 0.3s ease; /* Smooth opacity transition */
+}
+
+/* Sun icon for light mode (black) */
+#toggle-dark-mode .sun {
+    color: black; /* Black color for sun */
+    opacity: 1; /* Visible in light mode */
+}
+
+/* Moon icon for dark mode (white) */
+#toggle-dark-mode .moon {
+    color: white; /* White color for moon */
+    opacity: 0; /* Invisible in light mode */
+}
+
+/* When dark mode is active, show the moon and hide the sun */
+html.dark-mode #toggle-dark-mode .sun {
+    opacity: 0; /* Hide sun */
+}
+
+html.dark-mode #toggle-dark-mode .moon {
+    opacity: 1; /* Show moon */
+}
+
+/* Optional: Styles for hover effect */
+#toggle-dark-mode:hover {
+    opacity: 0.8; /* Slightly change opacity on hover */
+}
+
+html.dark-mode #toggle-dark-mode:hover {
+    opacity: 0.8; /* Slightly change opacity on hover in dark mode */
+}

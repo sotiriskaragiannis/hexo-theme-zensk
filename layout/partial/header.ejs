@@ -1,17 +1,25 @@
 <header>
     <a class="title" href="/">
-        <h1>
-            <%= config.title %>
-        </h1>
-        <% if (config.subtitle) { %>
-        <h6>
-            <%= config.subtitle %>
-        </h6>
-        <% } %>
+        <div>
+            <h1><%= config.title %></h1>
+            <% if (config.subtitle) { %>
+                <h6><%= config.subtitle %></h6>
+            <% } %>
+        </div>
     </a>
     <nav>
         <p>
-            <% for (let name in theme.menu) { %><a href="<%- url_for(theme.menu[name]) %>"><%= name %></a><% } %>
+            <% for (let name in theme.menu) { %>
+                <a href="<%- url_for(theme.menu[name]) %>"><%= name %></a>
+            <% } %>
         </p>
     </nav>
 </header>
+
+<!-- Apply dark mode immediately on page load -->
+<script>
+    if (localStorage.getItem('darkModeEnabled') === 'true') {
+        document.documentElement.classList.add('dark-mode');
+    }
+</script>
+<script src="<%= url_for('/js/dark-mode-toggle.js') %>"></script>

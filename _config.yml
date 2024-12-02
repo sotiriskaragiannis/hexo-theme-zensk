@@ -1,0 +1,12 @@
+favicon: favicon.jpg
+
+menu:
+  Home: /
+  Photography: /photography
+  About: /about/me
+
+copyright:
+  name: Sotiris Karagiannis
+  year: 2024
+  theme: ZenSK
+  based_on: Zen by Yojigen.Tech

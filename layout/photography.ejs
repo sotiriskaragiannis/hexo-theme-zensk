@@ -1,0 +1,16 @@
+<main id="photography-page">
+    <h1>Photography</h1>
+    <div id="app">Loading photography...</div> <!-- Placeholder for dynamic gallery -->
+</main>
+
+<!-- Fullscreen overlay elements -->
+<div id="image-overlay">
+    <img id="overlay-image" alt="Full-sized image">
+    <button id="close-overlay" aria-label="Close overlay">×</button>
+    <button id="prev-arrow" class="nav-arrow left-arrow" aria-label="Previous image">‹</button>
+    <button id="next-arrow" class="nav-arrow right-arrow" aria-label="Next image">›</button>
+</div>
+
+<!-- Scripts -->
+<script src="<%= url_for('/assets/photography.js') %>"></script>
+<script src="<%= url_for('/assets/manifest.js') %>"></script> <!-- Manifest file -->

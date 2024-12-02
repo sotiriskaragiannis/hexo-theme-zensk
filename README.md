@@ -1,23 +1,36 @@
 # hexo-theme-zen
-## 禅 - Hexo极简主题
+## ZenSK - Hexo Minimalist Theme
 
 ---
 
-功能简单，但是文件超小，不开评论功能每个页面只加载**15kb**左右
+Simple functions, but super small files.
 
-配置文件参考`_config.zen.yml`
+Configuration file reference `_config.zen.yml`
 
-支持`Twikoo`和`beaudar`评论功能
+Forked from [Zen](https://github.com/mouyase/hexo-theme-zen). Removed Twikoo and Beaudar support. Added page `photography` to present a gallery of images.
 
-正确的高亮配置
-```yaml
-highlight:
-  enable: true
-  line_number: false
-  auto_detect: false
-  tab_replace: ''
-  wrap: false
-  hljs: true
-prismjs:
-  enable: false
+Images should be in the `/blog/source/assets/` to two directories, one for thumbnails (`compressed-images`) and one for the actual images (`full-images`). The images are loaded from a `/blog/source/assets/manifest.js` file that is of the format:
+
+```js
+window.manifest = [
+    {
+        "thumbnail_filename": "image1-min.jpg",
+        "fullsize_filename": "image1.jpg"
+    },
+    {
+        "thumbnail_filename": "image2-min.jpg",
+        "fullsize_filename": "image2.jpg",
+        "class":"big"
+    },
+    {
+        "thumbnail_filename": "image3-min.jpg",
+        "fullsize_filename": "image3.jpg",
+        "class":"tall"
+    },
+    {
+        "thumbnail_filename": "image4-min.jpg",
+        "fullsize_filename": "image4.jpg",
+        "class":"wide"
+    }
+]
 ```
