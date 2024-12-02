@@ -7,7 +7,7 @@ Simple functions, but super small files.
 
 Configuration file reference `_config.zen.yml`
 
-Forked from [Zen](https://github.com/mouyase/hexo-theme-zen). Removed Twikoo and Beaudar support. Added page `photography` to present a gallery of images.
+Forked from [Zen](https://github.com/mouyase/hexo-theme-zen). Removed Twikoo and Beaudar support. Added page `photography` to present a gallery of images. Also added ui toggle for dark mode.
 
 Images should be in the `/blog/source/assets/` to two directories, one for thumbnails (`compressed-images`) and one for the actual images (`full-images`). The images are loaded from a `/blog/source/assets/manifest.js` file that is of the format:
 
