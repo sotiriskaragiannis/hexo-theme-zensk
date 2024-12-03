@@ -1,6 +1,17 @@
 <footer style="padding:25px 0;">
-    <!-- TODO: Add links to socials like GitHub, Instagram, etc. -->
-    <br/>
+    <!-- Social Links Section -->
+    <% if (config.socials) { %>
+    <div class="social-links" style="text-align:center; margin-bottom:15px;">
+        <% for (const [name, data] of Object.entries(config.socials)) { %>
+        <a href="<%= data.url %>" target="_blank" rel="noopener noreferrer" style="margin: 0 10px;">
+            <i class="fab <%= data.icon %>" aria-hidden="true" style="font-size: 1.5em;"></i>
+            <span class="sr-only"><%= name %></span>
+        </a>
+        <% } %>
+    </div>
+    <% } %>
+
+    <!-- Rest of the Footer -->
     <% if (theme.copyright) { %>
     <span>
         &copy; <%= theme.copyright.year || date(new Date(), 'YYYY') %>

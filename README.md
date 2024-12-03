@@ -34,3 +34,18 @@ window.manifest = [
     }
 ]
 ```
+
+You can also dynamically load social link in the footer. In your hexo `config.yml` type the socials in this way:
+
+```yml
+# Socials
+socials:
+  GitHub:
+    url: https://github.com/sotiriskaragiannis
+    icon: fa-github
+  Instagram:
+    url: https://www.instagram.com/sotiris_karagiannis_
+    icon: fa-instagram
+```
+
+The icons used for the socials are from [Font Awsome](https://fontawesome.com/)
