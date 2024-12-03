@@ -1,4 +1,4 @@
-# hexo-theme-zen
+# hexo-theme-zensk
 ## ZenSK - Hexo Minimalist Theme
 
 ---
