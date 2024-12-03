@@ -1,5 +1,5 @@
 <footer style="padding:25px 0;">
-    <!-- TODO: Add links to socials like github, instagram etc -->
+    <!-- TODO: Add links to socials like GitHub, Instagram, etc. -->
     <br/>
     <% if (theme.copyright) { %>
     <span>
@@ -8,14 +8,22 @@
     </span>
     <% } %>
     <span>
-        Powered by <%= theme.copyright.theme %> Theme
+        Powered by 
+        <a href="<%= theme.copyright.theme.url %>" target="_blank">
+            <%= theme.copyright.theme.name %> Theme
+        </a>
     </span>
     <% if (theme.copyright.based_on) { %>
     <span>
-        , based on <%= theme.copyright.based_on %>
+        , based on 
+        <a href="<%= theme.copyright.based_on.url %>" target="_blank">
+            <%= theme.copyright.based_on.name %>
+        </a>
+        by <%= theme.copyright.based_on.author %>
     </span>
     <% } %>
+    <br>
     <span>
-        Powered by <a href="https://hexo.io/">Hexo</a>
+        Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
     </span>
 </footer>

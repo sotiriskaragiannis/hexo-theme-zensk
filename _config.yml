@@ -8,5 +8,10 @@ menu:
 copyright:
   name: Sotiris Karagiannis
   year: 2024
-  theme: ZenSK
-  based_on: Zen by Yojigen.Tech
+  theme:
+    name: ZenSK
+    url: https://github.com/sotiriskaragiannis/hexo-theme-zensk
+  based_on:
+    name: Zen
+    url: https://github.com/mouyase/hexo-theme-zen
+    author: 某亚瑟
